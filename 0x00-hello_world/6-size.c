@@ -1,7 +1,3 @@
-#!/bin/bash
-gcc -o size32
-
-
 #include <stdio.h>
 
 /**
