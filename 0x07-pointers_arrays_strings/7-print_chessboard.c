@@ -11,6 +11,7 @@ void print_chessboard(char (*a)[8])
 	while (row < 8)
 	{
 		int col = 0;
+
 		while (col < 8)
 		{
 			printf("%c", a[row][col]);
