@@ -5,7 +5,6 @@
  * @a: Pointer to the matrix
  * @size: Size of the square matrix
  */
-
 void print_diagsums(int *a, int size)
 {
 	int sum1 = 0;
@@ -15,10 +14,10 @@ void print_diagsums(int *a, int size)
 
 	while (i < size)
 	{
-		sum1 += a[i * size + i];
-		sum2 += a[i * size + (size - 1 - i)];
+	sum1 += a[i * size + i];
+	sum2 += a[i * size + (size - 1 - i)];
+	i++;
 	}
-
 	printf("Sum of main diagonal: %d\n", sum1);
 	printf("Sum of secondary diagonal: %d\n", sum2);
 }
