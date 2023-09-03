@@ -1,46 +1,54 @@
 #include <stdio.h>
 
 /**
- * calculate_sqrt - Recursively calculates the square root using binary search.
- * @n: The number for which to calculate the square root.
- * @start: The start of the search range.
- * @end: The end of the search range.
+ * _sqrt_recursion_helper - Helper function for _sqrt_recursion
  *
- * Return: The natural square root of n within the specified
- * range, or -1 if not found.
+ * @n: The number for which the square root is to be calculated
+ * @low: The lower bound of the search range
+ * @high: The upper bound of the search range
+ *
+ * Return: The natural square root of n, or -1 if not found
  */
-
-int calculate_sqrt(int n, int start, int end)
+int _sqrt_recursion_helper(int n, int low, int high)
 {
-	int mid = (start + end) / 2;
+	int mid;
+	long square;
 
-	if (mid * mid == n)
+	if (low > high)
+	{
+		return (-1);
+	}
+
+	mid = low + (high - low) / 2;
+	square = (long)mid * mid;
+
+	if (square == n)
+	{
 		return (mid);
-
-	if (mid * mid > n)
-		return (calculate_sqrt(n, start, mid - 1));
-
-	if (mid * mid < n)
-		return (calculate_sqrt(n, mid + 1, end));
-
-	return (-1);
+	}
+	else if (square < n)
+	{
+		return (_sqrt_recursion_helper(n, mid + 1, high));
+	}
+	else
+	{
+		return (_sqrt_recursion_helper(n, low, mid - 1));
+	}
 }
 
 /**
- * _sqrt_recursion - Returns the natural square root of a number.
- * @n: The number for which to calculate the square root.
+ * _sqrt_recursion - Calculate the natural square root of a number using
+ * recursion
  *
- * Return: The natural square root of n, or -1 if no natural square root.
+ * @n: The number for which the square root is to be calculated
+ *
+ * Return: The natural square root of n, or -1 if not found
  */
-
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
+	{
 		return (-1);
-
-	if (n == 0 || n == 1)
-		return (n);
-
-	return (calculate_sqrt(n, 1, n));
+	}
+	return (_sqrt_recursion_helper(n, 0, n));
 }
-
