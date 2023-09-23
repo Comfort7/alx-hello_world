@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 
 	while (i < argc)
 	{
-	if (!is_positive_number(argv[i]))
+		if (!is_positive_number(argv[i]))
 		{
 			printf("Error\n");
 			return (1);
