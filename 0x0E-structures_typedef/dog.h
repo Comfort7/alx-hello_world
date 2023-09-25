@@ -25,7 +25,8 @@ void print_dog(struct dog *d);
 /**
  * dog_t - Typedef for struct dog.
  *
- * Description: This typedef creates a new name 'dog_t' for the struct dog type.
+ * Description: This typedef creates a new name 'dog_t' for the struct dog
+ * type.
  */
 typedef struct dog dog_t;
 
